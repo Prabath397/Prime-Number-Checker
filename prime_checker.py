@@ -19,8 +19,13 @@ while True:
     try:
         number = int(user_input)
         if is_prime(number):
-            print(f"✅ {number} is a PRIME number.\n")
+            print(f"✅ {number} is a PRIME number.")
         else:
-            print(f"❌ {number} is NOT a prime number.\n")
+            print(f"❌ {number} is NOT a prime number.")
+
+        # NEW FEATURE: list primes up to number
+        primes = [str(i) for i in range(2, number + 1) if is_prime(i)]
+        print(f"👉 Prime numbers up to {number}: {', '.join(primes)}\n")
+
     except ValueError:
         print("⚠️ Please enter a valid number.\n")
